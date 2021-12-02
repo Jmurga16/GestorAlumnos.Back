@@ -56,7 +56,7 @@ namespace ParcialDAD_Back
             {
                 app.UseCors(options =>
                 {
-                    options.WithOrigins("https://parcial-dad-murga.azurewebsites.net");
+                    options.WithOrigins("https://parcial-dad-murga.azurewebsites.net", "https://parcialdad.azurewebsites.net");
                     options.AllowAnyMethod();
                     options.AllowAnyHeader();
                 });
