@@ -27,6 +27,8 @@ namespace ParcialDAD_Back
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddCors();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -39,9 +41,25 @@ namespace ParcialDAD_Back
         {
             if (env.IsDevelopment())
             {
+                app.UseCors(options =>
+                {
+                    options.WithOrigins("http://localhost:4200");
+                    options.AllowAnyMethod();
+                    options.AllowAnyHeader();
+                });
+
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ParcialDAD_Back v1"));
+            } 
+            else
+            {
+                app.UseCors(options =>
+                {
+                    options.WithOrigins("https://parcial-dad-murga.azurewebsites.net");
+                    options.AllowAnyMethod();
+                    options.AllowAnyHeader();
+                });
             }
 
             app.UseHttpsRedirection();
