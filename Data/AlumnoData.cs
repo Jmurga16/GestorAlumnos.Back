@@ -48,6 +48,8 @@ namespace Data
 
 
                                 entity.nIdAlumno = Int32.Parse(Convert.ToString(dr["nIdAlumno"]));
+                                entity.nEdad = Int32.Parse(Convert.ToString(dr["nEdad"]));
+
                                 entity.sCodAlu = Convert.ToString(dr["sCodAlu"]);
                                 entity.sNombres = Convert.ToString(dr["sNombres"]);
                                 entity.sApellidos = Convert.ToString(dr["sApellidos"]);

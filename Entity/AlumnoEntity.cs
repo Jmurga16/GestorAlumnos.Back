@@ -12,5 +12,6 @@ namespace Entity
         public string sCodAlu { get; set; }
         public string sNombres { get; set; }
         public string sApellidos { get; set; }
+        public int nEdad { get; set; }
     }
 }
