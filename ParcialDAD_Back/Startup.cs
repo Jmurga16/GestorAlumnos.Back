@@ -32,7 +32,7 @@ namespace ParcialDAD_Back
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ParcialDAD_Back", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GestorNotas", Version = "v1" });
             });
         }
 
@@ -50,14 +50,13 @@ namespace ParcialDAD_Back
 
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ParcialDAD_Back v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GestorNotas v1"));
             } 
             else
             {
                 app.UseCors(options =>
                 {
-                    options.WithOrigins("https://parcial-dad-murga.azurewebsites.net", "https://parcialdad.azurewebsites.net", 
-                                           "https://final-dad-jm.azurewebsites.net");
+                    options.WithOrigins( "https://parcialdad.azurewebsites.net");
                     options.AllowAnyMethod();
                     options.AllowAnyHeader();
                 });
